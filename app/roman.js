@@ -31,4 +31,4 @@ class Roman{
     
 }
 
-module.exports = Roman;
+module.exports=new Roman(); //Single-instance pattern
