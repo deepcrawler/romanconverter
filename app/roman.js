@@ -1,12 +1,12 @@
 class Roman{
     romanize (num) {
-        const failedVal = "";
+        const failedVal = ""; //Default failed value
         try{
-            if (isNaN(num) || 
-                num == null || 
-                num =="" || 
-                num < 0 || 
-                num % 1 !== 0 // Float numbers
+            if (isNaN(num) ||  // Non-number
+                num == null || // Null 
+                num =="" ||    // Empty string
+                num < 0 ||     // Negative numbers or zero
+                num % 1 !== 0  // Float numbers
                 ){
                 return failedVal;
             }
@@ -22,9 +22,10 @@ class Roman{
             }
 
             let res = Array(+digits.join("") + 1).join("M") + roman;
-            return res === "" ? failedVal : res;
+            return res === "" ? failedVal : res; //Check for empty string and return failedValue if it's empty
         }
         catch(exp){
+            console.log(exp);
             return failedVal;
         }
     }
